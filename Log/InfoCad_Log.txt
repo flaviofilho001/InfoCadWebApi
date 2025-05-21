@@ -1,0 +1,143 @@
+Information: 14 - Now listening on: https://localhost:7004
+Information: 14 - Now listening on: http://localhost:5041
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\flavi\Desktop\Programação\C#\InfoCad\InfoCad
+Information: 20101 - Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `e`.`EventoId`, `e`.`DataEvento`, `e`.`Descricao`, `e`.`Titulo`, `e`.`UrlEdital`, `e`.`UrlImagem`
+FROM `Eventos` AS `e`
+Information: 20101 - Executed DbCommand (74ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `Eventos` (`DataEvento`, `Descricao`, `Titulo`, `UrlEdital`, `UrlImagem`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `EventoId`
+FROM `Eventos`
+WHERE ROW_COUNT() = 1 AND `EventoId` = LAST_INSERT_ID();
+Information: 14 - Now listening on: https://localhost:7004
+Information: 14 - Now listening on: http://localhost:5041
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\flavi\Desktop\Programação\C#\InfoCad\InfoCad
+Error: 0 - Ocorreu um exceção não tratada: Status Code 500
+Information: 14 - Now listening on: https://localhost:7004
+Information: 14 - Now listening on: http://localhost:5041
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\flavi\Desktop\Programação\C#\InfoCad\InfoCad
+Error: 0 - Ocorreu um exceção não tratada: Status Code 500
+Information: 14 - Now listening on: https://localhost:7004
+Information: 14 - Now listening on: http://localhost:5041
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\flavi\Desktop\Programação\C#\InfoCad\InfoCad
+Error: 0 - Ocorreu um exceção não tratada: Status Code 500
+Information: 14 - Now listening on: https://localhost:7004
+Information: 14 - Now listening on: http://localhost:5041
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\flavi\Desktop\Programação\C#\InfoCad\InfoCad
+Information: 20101 - Executed DbCommand (61ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `e`.`EventoId`, `e`.`DataEvento`, `e`.`Descricao`, `e`.`Titulo`, `e`.`UrlEdital`, `e`.`UrlImagem`
+FROM `Eventos` AS `e`
+Information: 14 - Now listening on: https://localhost:7004
+Information: 14 - Now listening on: http://localhost:5041
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\flavi\Desktop\Programação\C#\InfoCad\InfoCad
+Information: 20101 - Executed DbCommand (120ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `Notificacaos` (`Descricao`, `Titulo`)
+VALUES (@p0, @p1);
+SELECT `NotificacaoId`
+FROM `Notificacaos`
+WHERE ROW_COUNT() = 1 AND `NotificacaoId` = LAST_INSERT_ID();
+Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `n`.`NotificacaoId`, `n`.`Descricao`, `n`.`Titulo`
+FROM `Notificacaos` AS `n`
+Information: 20101 - Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `n`.`NotificacaoId`, `n`.`Descricao`, `n`.`Titulo`
+FROM `Notificacaos` AS `n`
+WHERE `n`.`NotificacaoId` = @__id_0
+LIMIT 1
+Warning: 0 - Dados inválidos
+Warning: 0 - Dados inválidos
+Warning: 0 - Dados inválidos
+Information: 20101 - Executed DbCommand (2ms) [Parameters=[@__notificacao_NotificacaoId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM `Notificacaos` AS `n`
+    WHERE `n`.`NotificacaoId` = @__notificacao_NotificacaoId_0)
+Information: 20101 - Executed DbCommand (11ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+UPDATE `Notificacaos` SET `Descricao` = @p0, `Titulo` = @p1
+WHERE `NotificacaoId` = @p2;
+SELECT ROW_COUNT();
+Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `n`.`NotificacaoId`, `n`.`Descricao`, `n`.`Titulo`
+FROM `Notificacaos` AS `n`
+Information: 20101 - Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `n`.`NotificacaoId`, `n`.`Descricao`, `n`.`Titulo`
+FROM `Notificacaos` AS `n`
+WHERE `n`.`NotificacaoId` = @__p_0
+LIMIT 1
+Information: 20101 - Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET AUTOCOMMIT = 1;
+DELETE FROM `Notificacaos`
+WHERE `NotificacaoId` = @p0;
+SELECT ROW_COUNT();
+Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `n`.`NotificacaoId`, `n`.`Descricao`, `n`.`Titulo`
+FROM `Notificacaos` AS `n`
+Information: 14 - Now listening on: https://localhost:7004
+Information: 14 - Now listening on: http://localhost:5041
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\flavi\Desktop\Programação\C#\InfoCad\InfoCad
+Information: 20101 - Executed DbCommand (107ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `Eventos` (`DataEvento`, `Descricao`, `Titulo`, `UrlEdital`, `UrlImagem`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `EventoId`
+FROM `Eventos`
+WHERE ROW_COUNT() = 1 AND `EventoId` = LAST_INSERT_ID();
+Information: 20101 - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `e`.`EventoId`, `e`.`DataEvento`, `e`.`Descricao`, `e`.`Titulo`, `e`.`UrlEdital`, `e`.`UrlImagem`
+FROM `Eventos` AS `e`
+Information: 14 - Now listening on: https://localhost:7004
+Information: 14 - Now listening on: http://localhost:5041
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\flavi\Desktop\Programação\C#\InfoCad\InfoCad
+Information: 20101 - Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `e`.`EventoId`, `e`.`DataEvento`, `e`.`Descricao`, `e`.`Titulo`, `e`.`UrlEdital`, `e`.`UrlImagem`
+FROM `Eventos` AS `e`
+Information: 20101 - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `e`.`EventoId`, `e`.`DataEvento`, `e`.`Descricao`, `e`.`Titulo`, `e`.`UrlEdital`, `e`.`UrlImagem`
+FROM `Eventos` AS `e`
+Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `e`.`EventoId`, `e`.`DataEvento`, `e`.`Descricao`, `e`.`Titulo`, `e`.`UrlEdital`, `e`.`UrlImagem`
+FROM `Eventos` AS `e`
+Information: 14 - Now listening on: https://localhost:7004
+Information: 14 - Now listening on: http://localhost:5041
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\flavi\Desktop\Programação\C#\InfoCad\InfoCad
+Information: 14 - Now listening on: https://localhost:7004
+Information: 14 - Now listening on: http://localhost:5041
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\flavi\Desktop\Programação\C#\InfoCad\InfoCad
+Information: 20101 - Executed DbCommand (43ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `e`.`EventoId`, `e`.`DataEvento`, `e`.`Descricao`, `e`.`Titulo`, `e`.`UrlEdital`, `e`.`UrlImagem`
+FROM `Eventos` AS `e`
+Information: 14 - Now listening on: https://localhost:7004
+Information: 14 - Now listening on: http://localhost:5041
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: C:\Users\flavi\Desktop\Programação\C#\InfoCad\InfoCad
+Information: 20101 - Executed DbCommand (149ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+INSERT INTO `Eventos` (`DataEvento`, `Descricao`, `Titulo`, `UrlEdital`, `UrlImagem`)
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT `EventoId`
+FROM `Eventos`
+WHERE ROW_COUNT() = 1 AND `EventoId` = LAST_INSERT_ID();
+Information: 20101 - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `e`.`EventoId`, `e`.`DataEvento`, `e`.`Descricao`, `e`.`Titulo`, `e`.`UrlEdital`, `e`.`UrlImagem`
+FROM `Eventos` AS `e`

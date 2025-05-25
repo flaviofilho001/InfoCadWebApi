@@ -10,6 +10,9 @@ namespace InfoCad.Controllers
     [ApiController]
     public class EventoController : ControllerBase
     {
+
+        //adicionar DTOs
+        // http patch caso eu queira atualizar parcialmente algum dado, e não completo, ex quero atualizar o cpf apenas
         private readonly IUnitOfWork _uof;
         private readonly IEventoRepository _eventoRepository;
         private readonly ILogger<EventoController> _logger;
